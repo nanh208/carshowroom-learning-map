@@ -15,6 +15,20 @@ Mở `MO-BAN-DO.bat` trên Windows để vào bản đồ trong trình duyệt m
 3. Lặp lại với **Xác nhận tiền về**, **Đấu giá** hoặc **Báo ARES** để thấy giao dịch, tác vụ nền và luồng quản trị.
 4. Dùng ô tìm kiếm để lần theo đường dẫn và tên hàm. Đường dẫn mã tính từ thư mục gốc CarShowroom.
 
+## Học theo thành viên
+
+Mở mục **Học theo tên** rồi chọn tên để xem thứ tự học, bài thực hành, người cần phối hợp và **tất cả sơ đồ liên quan**. Sơ đồ đầu tiên mở sẵn, các sơ đồ còn lại mở ngay bên dưới. Có thể nhập đúng tên ngay trong bảng hoặc chọn tên ở bộ lọc. Bật **Kèm API và tệp liên quan** khi cần mở rộng từ màn hình sang mã dùng chung.
+
+| Thành viên | Phần phụ trách | Điểm vào |
+|---|---|---:|
+| Ngọc Anh | Nhóm trưởng, danh mục, giao diện, ưu đãi và ghép demo | 22 |
+| Mạnh | Giỏ hàng, đơn hàng và thanh toán | 16 |
+| Nam | Kho, POS, báo cáo và đấu giá | 16 |
+| Minh | Tài khoản, phân quyền và hỗ trợ | 18 |
+| Thịnh | Báo ARES, cộng đồng và dịch vụ RC | 18 |
+
+Điểm vào gồm màn hình và đường dẫn chuyển hướng. API, controller và thành phần dùng chung có thể liên quan đến nhiều thành viên.
+
 Nếu clone repo này ngay bên trong thư mục CarShowroom, các liên kết tệp có thể mở bản mã nguồn cùng máy. Repo này mang theo tài liệu học, không chứa ứng dụng CarShowroom và không đòi hỏi chạy ứng dụng để tra cứu.
 
 ## Cập nhật bản đồ
