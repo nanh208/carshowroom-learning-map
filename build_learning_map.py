@@ -146,6 +146,22 @@ flows = [
       "backend/src/main/java/com/ares/shop/service/NotifyService.java"]],
 ]
 data["flows"] = [data["flows"][0], *flows, *data["flows"][1:]]
+images = {
+    "Kiến trúc tổng thể": "kien-truc",
+    "Vòng đời đơn hàng": "don-hang",
+    "Mua hàng và sau mua": "don-hang",
+    "Xác nhận tiền về": "tien-ve",
+    "Tiền về và đối soát": "tien-ve",
+    "Đấu giá": "dau-gia",
+    "Báo ARES từ bản nháp tới độc giả": "bao-ares",
+    "Biên tập Báo ARES": "bao-ares",
+}
+for flow in data["flows"]:
+    if key := images.get(flow[0]):
+        path = f"diagrams/{key}.png"
+        if not (target / path).is_file():
+            raise FileNotFoundError(path)
+        flow.append(path)
 flow_titles = {flow[0] for flow in data["flows"]}
 for member, details in MEMBERS.items():
     if missing := set(details["flows"]) - flow_titles:
@@ -185,6 +201,10 @@ styles = """<style>
 .member-diagrams summary{font-size:15px;font-weight:650}
 .member-diagrams .chain{padding:0;margin:10px 0}
 .member-diagrams .chain li+li{margin-top:0}
+.flow-picture{margin:12px 0;background:#f1f6f2;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.flow-picture a{display:block}
+.flow-picture img{width:100%;height:auto;display:block;max-width:930px;margin:auto}
+.flow-picture figcaption{padding:6px 12px;font-size:13px;color:var(--muted)}
 .owner-filter{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:14px}
 .owner-filter input{flex:0}
 </style>"""
@@ -224,10 +244,26 @@ output = output.replace(
 )
 output = output.replace(
     "function showFlow(index) {\n  const [title, steps, description, files] = data.flows[index];",
-    "function flowContent([, steps, description, files]) {", 1
+    "function flowContent([title, steps, description, files, picture]) {", 1
 ).replace(
     "  get('active-flow').replaceChildren(node('h3', title), chain, node('p', description, 'flow-note'), links);",
-    """  return [chain, node('p', description, 'flow-note'), links];
+    """  const content = [chain, node('p', description, 'flow-note'), links];
+  if (picture) {
+    const figure = node('figure', '', 'flow-picture');
+    const link = node('a');
+    link.href = picture;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.setAttribute('aria-label', 'Mở ảnh sơ đồ ' + title);
+    const image = node('img');
+    image.src = picture;
+    image.alt = 'Sơ đồ phân nhánh ' + title;
+    image.loading = 'lazy';
+    link.append(image);
+    figure.append(link, node('figcaption', 'Bấm ảnh để xem kích thước đầy đủ.'));
+    content.unshift(figure);
+  }
+  return content;
 }
 function showFlow(index) {
   const flow = data.flows[index];

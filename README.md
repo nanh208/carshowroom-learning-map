@@ -17,7 +17,7 @@ Mở `MO-BAN-DO.bat` trên Windows để vào bản đồ trong trình duyệt m
 
 ## Học theo thành viên
 
-Mở mục **Học theo tên** rồi chọn tên để xem thứ tự học, bài thực hành, người cần phối hợp và **tất cả sơ đồ liên quan**. Sơ đồ đầu tiên mở sẵn, các sơ đồ còn lại mở ngay bên dưới. Có thể nhập đúng tên ngay trong bảng hoặc chọn tên ở bộ lọc. Bật **Kèm API và tệp liên quan** khi cần mở rộng từ màn hình sang mã dùng chung.
+Mở mục **Học theo tên** rồi chọn tên để xem thứ tự học, bài thực hành, người cần phối hợp và **tất cả sơ đồ liên quan**. Sơ đồ đầu tiên mở sẵn, các sơ đồ còn lại mở ngay bên dưới. Các luồng xương sống có ảnh phân nhánh mở được offline và có thể bấm để phóng to. Có thể nhập đúng tên ngay trong bảng hoặc chọn tên ở bộ lọc. Bật **Kèm API và tệp liên quan** khi cần mở rộng từ màn hình sang mã dùng chung.
 
 | Thành viên | Phần phụ trách | Điểm vào |
 |---|---|---:|
@@ -33,4 +33,4 @@ Nếu clone repo này ngay bên trong thư mục CarShowroom, các liên kết t
 
 ## Cập nhật bản đồ
 
-Trên máy có mã nguồn gốc và Python 3, chạy `python build_learning_map.py --source <thu-muc-CarShowroom>`. Công cụ dùng trình tạo bản đồ có sẵn trong CarShowroom, sau đó đo tệp theo quy tắc ghi trên trang. Word là ảnh chụp tài liệu trước khi thêm phần số liệu và sơ đồ chi tiết.
+Trên máy có mã nguồn gốc và Python 3, chạy `python build_learning_map.py --source <thu-muc-CarShowroom>`. Công cụ dùng trình tạo bản đồ có sẵn trong CarShowroom, sau đó đo tệp theo quy tắc ghi trên trang. Bản Word có năm sơ đồ phân nhánh và các bảng tra cứu tại thời điểm xuất tài liệu.
